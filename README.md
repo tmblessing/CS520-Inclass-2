@@ -1,2 +1,1 @@
-# cs520
-Resources for the CS520 course
+This repository provides resources for the CS520 course.
