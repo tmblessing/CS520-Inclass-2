@@ -27,17 +27,18 @@ Rather than reading the mutants.log file, you can visualize the source code
 differences between a mutant and the original program by running:
 `./show_mutant.sh <mutant ID>`
 
-For example, the following command shows how mutant 20 differs from the original
+For example, the following command shows how mutant 1 differs from the original
 (i.e., unmutated) program:
 `./show_mutant.sh 1`
 
-The output is a unified diff that indicates what line the mutation step changed:
+The output is a unified diff that indicates what line the mutation changed:
+```
 --- src/triangle/Triangle.java
 +++ .mutated/mutants/1/triangle/Triangle.java
 @@ -20 +20 @@
 -        if (a <= 0 || b <= 0 || c <= 0) {
 +        if (a <= 1 || b <= 0 || c <= 0) {
-
-The line starting with '@@' indicates the line number of the changed source code
-line (20 in this example). The line starting with '- ' shows the removed line,
-and the line starting with '+ ' shows the line that replaced it.
+```
+The line starting with `@@` indicates the line number of the changed source code
+line (20 in this example). The line starting with `- ` shows the removed line,
+and the line starting with `+ ` shows the line that replaced it.
