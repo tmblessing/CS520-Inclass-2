@@ -1,0 +1,43 @@
+Testing
+-------
+Run `./test.sh` to compile and run all test cases.
+
+Coverage
+--------
+Run `./coverage.sh` to compute the coverage results.
+After completion, you can view the detailed html coverage report:
+coverage_results/index.html
+
+Mutation
+--------
+Run `./mutation.sh` to compute the mutation score.
+After completion, the following files in the *mutation_results* directory provide
+additional information about the generated, killed, and live mutants:
+
+- *killed.csv*:  a summary of whether a mutant is still live or was killed with an
+                 exception/assertion/timeout.
+
+- *summary.csv*: a one-line summary that indicates how many mutants were generated
+                 and killed, and how long the analysis took.
+
+- *mutants.log*: a summary of the generated mutants (i.e., what part of the code was
+                 changed and how).
+
+Rather than reading the mutants.log file, you can visualize the source code
+differences between a mutant and the original program by running:
+`./show_mutant.sh <mutant ID>`
+
+For example, the following command shows how mutant 20 differs from the original
+(i.e., unmutated) program:
+`./show_mutant.sh 1`
+
+The output is a unified diff that indicates what line the mutation step changed:
+--- src/triangle/Triangle.java
++++ .mutated/mutants/1/triangle/Triangle.java
+@@ -20 +20 @@
+-        if (a <= 0 || b <= 0 || c <= 0) {
++        if (a <= 1 || b <= 0 || c <= 0) {
+
+The line starting with '@@' indicates the line number of the changed source code
+line (20 in this example). The line starting with '- ' shows the removed line,
+and the line starting with '+ ' shows the line that replaced it.
