@@ -5,8 +5,8 @@ Run `./test.sh` to compile and run all test cases.
 Coverage
 --------
 Run `./coverage.sh` to compute the coverage results.
-After completion, you can view the detailed html coverage report:
-coverage_results/index.html
+After completion, you can view the detailed html coverage report here:
+*coverage_results/index.html*
 
 Mutation
 --------
