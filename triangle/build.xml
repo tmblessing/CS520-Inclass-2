@@ -80,7 +80,7 @@
 
             <batchtest fork="true">
                 <fileset dir="test">
-                    <include name="**/*Test*.java"/>
+                    <include name="**/*.java"/>
                 </fileset>
             </batchtest>
         </junit>
@@ -129,7 +129,7 @@
             <classpath path="bin"/>
             <batchtest fork="false">
                 <fileset dir="test">
-                    <include name="**/*Test*.java"/>
+                    <include name="**/*.java"/>
                 </fileset>
             </batchtest>
         </junit>
