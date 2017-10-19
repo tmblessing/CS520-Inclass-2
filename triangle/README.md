@@ -1,3 +1,7 @@
+# Triangle
+Example program for a software testing exercise that focuses on unit testing and
+test effectiveness, using code coverage and mutation analysis.
+
 Testing
 -------
 Run `./test.sh` to compile and run all test cases.
