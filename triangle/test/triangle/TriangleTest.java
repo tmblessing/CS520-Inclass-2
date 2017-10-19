@@ -13,5 +13,8 @@ public class TriangleTest {
 
     @Test
     public void test1() {
+        Type actual = Triangle.classify(10, 10, 10);
+        Type expected = EQUILATERAL;
+        assertEquals(actual, expected);
     }
 }
