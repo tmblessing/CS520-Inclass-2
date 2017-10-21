@@ -4,9 +4,9 @@ MAJOR_HOME="../.."
 
 echo
 echo "Compiling and mutating project"
-echo "(ant -Dmutation=\"=\$MAJOR_HOME/mml/tutorial.mml.bin\" clean compile)"
+echo "(ant -DmutOp=\"=\$MAJOR_HOME/mml/tutorial.mml.bin\" clean compile)"
 echo
-$MAJOR_HOME/bin/ant -Dmutation="=$MAJOR_HOME/mml/tutorial.mml.bin" clean compile
+$MAJOR_HOME/bin/ant -DmutOp="=$MAJOR_HOME/mml/tutorial.mml.bin" clean compile
 
 echo
 echo "Compiling tests"

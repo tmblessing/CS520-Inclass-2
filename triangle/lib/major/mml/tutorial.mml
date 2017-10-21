@@ -1,25 +1,21 @@
-// Define an own operator group
 targetOp{
-    // Use sufficient replacements for ROR
+    // Define the replacements for ROR
     BIN(>)->{>=,!=,FALSE};
     BIN(<)->{<=,!=,FALSE};
     BIN(>=)->{>,==,TRUE};
     BIN(<=)->{<,==,TRUE};
     BIN(==)->{<=,>=,FALSE,LHS,RHS};
     BIN(!=)->{<,>,TRUE,LHS,RHS};
-    
-    // Use sufficient replacements for COR
+    // Define the replacements for COR
     BIN(&&)->{==,LHS,RHS,FALSE};
     BIN(||)->{!=,LHS,RHS,TRUE};
+    // Define the type of statement that STD should delete
+    DEL(RETURN);
 
-    // Enable ROR and COR operators
+    // Enable the STD, COR, and ROR mutation operators
+    STD;
     COR;
     ROR;
 }
-
-// Define the target package, class, or method
-target1="triangle.Triangle@classify";
-target2="triangle.Triangle1@classify";
-
-// Call defined operator group for specified target
-targetOp<target1>;
+// Call the defined operator group for the target method
+targetOp<"triangle.Triangle::classify(int,int,int)">;

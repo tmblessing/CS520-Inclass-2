@@ -4,8 +4,8 @@
       Path to Major and Mutation options 
       Use -Dmutation="=mml-file" to set path to mml-file
      ############################################## -->
-    <property name="mutation" value=":NONE"/>
-    <property name="mutator" value="-XMutator${mutation}"/>
+    <property name="mutOp" value=":NONE"/>
+    <property name="mutator" value="-XMutator${mutOp}"/>
     <property name="major" value="../../bin/javac"/>
 
 
@@ -41,9 +41,7 @@
         <javac includeantruntime="true" 
                srcdir="test"
               destdir="bin"
-                debug="yes"
-	             fork="yes"
-	       executable="${major}">
+                debug="yes">
         </javac>
     </target>
 
@@ -66,7 +64,7 @@
     </target>
 
 <!-- The original test target -->
-    <target name="test" description="Run all unit test cases">
+    <target name="test" depends="compile.tests" description="Run all unit test cases">
         <echo message="Running unit tests ..."/>
         <junit  printsummary="true" 
         		showoutput="true" 

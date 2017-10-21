@@ -1,5 +1,4 @@
 // A simple mml file to generate all mutants
-// For COR and ROR, we use the sufficient sets
 
 list_aor={+,-,*,/,%};
 list_lor={&,|,^};
@@ -36,10 +35,14 @@ BIN(!=)->{<,>,TRUE,LHS,RHS};
 BIN(&&)->{==,LHS,RHS,FALSE};
 BIN(||)->{!=,LHS,RHS,TRUE};
 
-// Delete all supported statements
+// Delete all types of supported statements
 DEL(CALL);
-DEL(INC/DEC);
+DEL(INC);
+DEL(DEC);
 DEL(ASSIGN);
+DEL(CONT);
+DEL(BREAK);
+DEL(RETURN);
 
 // Enable all operators
 AOR;
